@@ -3,7 +3,7 @@
 -- exemplo de saida: p__
 dif2 :: String -> String -> String
 dif2 (x:xs) (y:ys)
-    | length xs < 1 = ""
+    | length xs < 1 = if x == y then [x] else "_"
     | length ys < 1 = (if x == y then x else '_') : ['_' | a <- xs ]
     | (x == y) = x:(dif2 xs ys)
     | otherwise = '_':(dif2 xs ys)
@@ -18,11 +18,10 @@ dif    s1 s2 = if length s1 > length s2
 
 ndif2 :: String -> String -> String
 ndif2 (x:xs) (y:ys)
-    | length xs < 1 = ""
+    | length xs < 1 = if x == y then "_" else [x]
     | length ys < 1 = (if x == y then '_' else x): xs
     | (x == y) = '_':(ndif2 xs ys)
     | otherwise = x:(ndif2 xs ys)
-
 ndcheck :: String -> String
 ndcheck (x:s)
     | length s == 0 = if x == '_' then "iguais" else "diferentes"
