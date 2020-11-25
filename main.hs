@@ -1,6 +1,3 @@
--- diferença entre duas strings
--- exmplod e entrada: php python
--- exemplo de saida: p__
 dif2 :: String -> String -> String
 dif2 (x:xs) (y:ys)
     | length xs < 1 = if x == y then [x] else "_"
@@ -36,3 +33,4 @@ ndif    s1 s2 = if length s1 > length s2
 main = do
     putStrLn "dif: recebe duas strings e as compara diretamente  elemento a elemento diz quais caracteres sao iguais ou nao"
     putStrLn "ndif: recebe duas strings e as compara diretamente  elemento a elemento diz quais caracteres sao iguais ou nao"
+    putStrLn "Como chamar uma funcao: funcao <string1> <string2>\ncolocando ambas as strings entre aspas "
